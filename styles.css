@@ -126,10 +126,16 @@ body {
 }
 
 .welcome {
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--muted);
+  letter-spacing: 4px;
+  color: var(--gold);
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(197, 138, 44, 0.12);
+  border: 1px solid rgba(197, 138, 44, 0.35);
+  box-shadow: 0 10px 18px rgba(60, 42, 30, 0.2);
 }
 
 .map-title {
