@@ -7,6 +7,8 @@
   --brown: #d6b293;
   --shadow: 0 12px 24px rgba(75, 50, 35, 0.2);
   --radius: 18px;
+  --footer-pill: #e7c7aa;
+  --footer-icon: rgba(90, 59, 43, 0.15);
 }
 
 * {
@@ -190,9 +192,13 @@ body {
 .section-kicker {
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.2px;
   text-align: center;
   color: var(--muted);
+}
+
+.section.footer-area {
+  margin-top: 18px;
 }
 
 .cards {
@@ -362,15 +368,29 @@ body {
 
 .channels {
   display: grid;
-  gap: 10px;
+  gap: 12px;
+}
+
+.pill-footer {
+  background: var(--footer-pill);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 10px 18px rgba(70, 50, 35, 0.22);
+}
+
+.pill-footer .pill-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--footer-icon);
 }
 
 .footer {
-  margin-top: 28px;
-  background: #2b2b36;
+  margin-top: 22px;
+  background: #2f303b;
   color: #f2e6d6;
   padding: 10px 14px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
   font-size: 12px;
   box-shadow: var(--shadow);
