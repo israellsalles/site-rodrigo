@@ -237,11 +237,13 @@ body {
 }
 
 .card {
+  display: block;
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
   min-height: 190px;
   box-shadow: var(--shadow);
+  text-decoration: none;
 }
 
 .card.image {
