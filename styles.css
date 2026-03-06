@@ -241,7 +241,7 @@ body {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  min-height: 190px;
+  min-height: 230px;
   box-shadow: var(--shadow);
   text-decoration: none;
 }
