@@ -241,15 +241,18 @@ body {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  min-height: 230px;
   box-shadow: var(--shadow);
   text-decoration: none;
 }
 
 .card.image {
-  background-image: var(--bg);
-  background-size: cover;
-  background-position: center;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.card-media {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .card-overlay {
