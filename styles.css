@@ -219,6 +219,92 @@ body {
   color: var(--muted);
 }
 
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.section-heading .section-title {
+  text-align: left;
+}
+
+.birthdays-admin-link {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #6d442e;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(63, 42, 32, 0.22);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.birthdays-admin-link:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.birthdays-help {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.birthdays-message {
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(63, 42, 32, 0.16);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #5f412e;
+}
+
+.birthdays-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.birthday-item {
+  background: rgba(255, 255, 255, 0.44);
+  border: 1px solid rgba(63, 42, 32, 0.16);
+  border-radius: 14px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.birthday-item.is-current-month {
+  border-color: rgba(197, 138, 44, 0.48);
+  box-shadow: 0 10px 18px rgba(60, 42, 30, 0.14);
+}
+
+.birthday-date {
+  font-family: "Cinzel", serif;
+  font-size: 15px;
+  color: #7d512f;
+  background: rgba(197, 138, 44, 0.18);
+  border-radius: 10px;
+  text-align: center;
+  padding: 8px 4px;
+}
+
+.birthday-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #4a2f22;
+}
+
+.birthday-note {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6e4c37;
+}
+
 .section-kicker {
   font-size: 12px;
   text-transform: uppercase;
@@ -431,9 +517,232 @@ body {
   box-shadow: var(--shadow);
 }
 
+.admin-body {
+  color: #2f1f17;
+}
+
+.admin-page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 28px 18px 48px;
+  display: grid;
+  gap: 14px;
+}
+
+.admin-header {
+  display: grid;
+  gap: 6px;
+}
+
+.admin-title {
+  font-family: "Cinzel", serif;
+  color: #8a5e2d;
+  font-size: 24px;
+}
+
+.admin-subtitle {
+  font-size: 13px;
+  color: #694834;
+}
+
+.admin-back-link {
+  width: fit-content;
+  color: #5d3d2a;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid rgba(63, 42, 32, 0.2);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.admin-card {
+  background: rgba(255, 255, 255, 0.46);
+  border: 1px solid rgba(63, 42, 32, 0.16);
+  border-radius: 14px;
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 10px 18px rgba(60, 42, 30, 0.12);
+}
+
+.admin-status {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(63, 42, 32, 0.14);
+}
+
+.admin-status.error {
+  color: #812f27;
+  background: rgba(255, 224, 220, 0.8);
+  border-color: rgba(129, 47, 39, 0.25);
+}
+
+.admin-status.success {
+  color: #1f5c32;
+  background: rgba(220, 248, 229, 0.9);
+  border-color: rgba(31, 92, 50, 0.25);
+}
+
+.admin-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-field {
+  display: grid;
+  gap: 6px;
+}
+
+.admin-field.full {
+  grid-column: 1 / -1;
+}
+
+.admin-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6c4a34;
+}
+
+.admin-input {
+  width: 100%;
+  border: 1px solid rgba(63, 42, 32, 0.22);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  font-family: "Nunito Sans", sans-serif;
+  background: rgba(255, 255, 255, 0.85);
+  color: #3f2a20;
+}
+
+.admin-input:focus {
+  outline: 2px solid rgba(197, 138, 44, 0.36);
+  border-color: rgba(197, 138, 44, 0.54);
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-btn {
+  border: 1px solid rgba(63, 42, 32, 0.2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.admin-btn.primary {
+  background: #ddb088;
+  color: #3a281d;
+}
+
+.admin-btn.secondary {
+  background: rgba(255, 255, 255, 0.85);
+  color: #5d3b29;
+}
+
+.admin-btn.danger {
+  background: #f8d9d3;
+  color: #7b2d26;
+}
+
+.admin-panel-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.admin-user {
+  font-size: 13px;
+  color: #6f4e3a;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(63, 42, 32, 0.16);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+}
+
+.admin-table th,
+.admin-table td {
+  border-bottom: 1px solid rgba(63, 42, 32, 0.12);
+  padding: 10px 8px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.admin-table th {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6f4b34;
+}
+
+.admin-table .empty {
+  text-align: center;
+  color: #6f4f3a;
+}
+
+.table-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.table-btn {
+  border: 1px solid rgba(63, 42, 32, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.table-btn.delete {
+  background: #f9e1dc;
+  color: #822f27;
+}
+
+.setup-note {
+  border-left: 4px solid #c58a2c;
+}
+
 @media (min-width: 720px) {
   .page {
     max-width: 480px;
+  }
+}
+
+@media (max-width: 680px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .birthday-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .birthday-date {
+    width: fit-content;
+    padding: 6px 8px;
   }
 }
 
