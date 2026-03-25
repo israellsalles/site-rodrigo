@@ -271,11 +271,11 @@ body {
   background: rgba(255, 255, 255, 0.44);
   border: 1px solid rgba(63, 42, 32, 0.16);
   border-radius: 14px;
-  padding: 12px;
-  display: grid;
-  grid-template-columns: 88px 1fr;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
 }
 
 .birthday-item.is-current-month {
@@ -285,17 +285,19 @@ body {
 
 .birthday-date {
   font-family: "Cinzel", serif;
-  font-size: 15px;
+  font-size: clamp(18px, 4vw, 28px);
   color: #7d512f;
   background: rgba(197, 138, 44, 0.18);
   border-radius: 10px;
   text-align: center;
-  padding: 8px 4px;
+  padding: 10px 14px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .birthday-name {
   font-weight: 700;
-  font-size: 14px;
+  font-size: clamp(20px, 4.5vw, 32px);
   color: #4a2f22;
 }
 
@@ -735,13 +737,8 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .birthday-item {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
   .birthday-date {
-    width: fit-content;
+    font-size: 13px;
     padding: 6px 8px;
   }
 
