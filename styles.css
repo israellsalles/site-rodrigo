@@ -744,5 +744,66 @@ body {
     width: fit-content;
     padding: 6px 8px;
   }
+
+  .admin-table-wrap {
+    overflow-x: visible;
+  }
+
+  .admin-table {
+    min-width: 0;
+  }
+
+  .admin-table thead {
+    display: none;
+  }
+
+  .admin-table tbody tr {
+    display: block;
+    border: 1px solid rgba(63, 42, 32, 0.16);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    margin-bottom: 8px;
+    padding: 4px 6px;
+  }
+
+  .admin-table td {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: none;
+    padding: 5px 4px;
+  }
+
+  .admin-table td::before {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6f4b34;
+    font-weight: 700;
+    min-width: 44px;
+    flex-shrink: 0;
+  }
+
+  .admin-table td:nth-child(1)::before {
+    content: "Nome";
+  }
+
+  .admin-table td:nth-child(2)::before {
+    content: "Data";
+  }
+
+  .admin-table td:nth-child(3)::before {
+    display: none;
+  }
+
+  .admin-table td.empty {
+    display: block;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .admin-table td.empty::before {
+    display: none;
+  }
 }
 
