@@ -4,12 +4,12 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.14.1/firebas
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD_f_Fk7XvwOIeedi_j88q-8KmThooo6SU",
-  authDomain: "igreja-batista-medaberel-faf32.firebaseapp.com",
-  projectId: "igreja-batista-medaberel-faf32",
-  storageBucket: "igreja-batista-medaberel-faf32.firebasestorage.app",
-  messagingSenderId: "147835059386",
-  appId: "1:147835059386:web:66cacb26841136ea905683"
+  apiKey: "AIzaSyAeXXu8wljtXR_5y0iNnDELXNQHvnoR1YI",
+  authDomain: "igreja-batista-medaberel-ed528.firebaseapp.com",
+  projectId: "igreja-batista-medaberel-ed528",
+  storageBucket: "igreja-batista-medaberel-ed528.firebasestorage.app",
+  messagingSenderId: "674589446512",
+  appId: "1:674589446512:web:57ce01c9beeab495b33fb5"
 };
 
 const firebaseReady = Object.values(firebaseConfig).every(

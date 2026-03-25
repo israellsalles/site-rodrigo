@@ -20,7 +20,6 @@ const birthdayIdInput = document.getElementById("birthdayId");
 const nameInput = document.getElementById("name");
 const dayInput = document.getElementById("day");
 const monthInput = document.getElementById("month");
-const noteInput = document.getElementById("note");
 
 const monthNames = [
   "Janeiro",
@@ -95,13 +94,11 @@ function renderRows() {
 
   birthdayRows.innerHTML = rows
     .map((record) => {
-      const note = record.observacao || "-";
       const encodedId = encodeURIComponent(record.id);
       return `
         <tr>
           <td>${escapeHtml(record.nome)}</td>
           <td>${formatDate(record.dia, record.mes)}</td>
-          <td>${escapeHtml(note)}</td>
           <td>
             <div class="table-actions">
               <button class="table-btn" type="button" data-action="edit" data-id="${encodedId}">
@@ -135,7 +132,6 @@ async function loadRecords() {
       const nome = String(data.nome || "").trim();
       const dia = Number(data.dia);
       const mes = Number(data.mes);
-      const observacao = String(data.observacao || "").trim();
 
       if (!nome || !isValidDayMonth(dia, mes)) {
         return;
@@ -146,7 +142,6 @@ async function loadRecords() {
         nome,
         dia,
         mes,
-        observacao,
       });
     });
 
@@ -191,7 +186,6 @@ async function handleSaveBirthday(event) {
   const nome = nameInput.value.trim();
   const dia = Number(dayInput.value);
   const mes = Number(monthInput.value);
-  const observacao = noteInput.value.trim();
 
   if (!nome) {
     showStatus(adminStatus, "Informe o nome.", "error");
@@ -207,7 +201,6 @@ async function handleSaveBirthday(event) {
     nome,
     dia,
     mes,
-    observacao,
   };
 
   try {
@@ -238,7 +231,6 @@ function startEdit(id) {
   nameInput.value = record.nome;
   dayInput.value = String(record.dia);
   monthInput.value = String(record.mes);
-  noteInput.value = record.observacao || "";
   showStatus(adminStatus, "Modo edicao ativo. Faca alteracoes e clique em Salvar.");
 }
 
