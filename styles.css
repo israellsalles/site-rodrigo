@@ -337,6 +337,20 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.video-card {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.video-card:focus-visible {
+  outline: 3px solid rgba(197, 138, 44, 0.72);
+  outline-offset: 4px;
+}
+
 .card-media {
   display: block;
   width: 100%;
@@ -517,6 +531,91 @@ body {
   text-align: center;
   font-size: 12px;
   box-shadow: var(--shadow);
+}
+
+body.video-modal-open {
+  overflow: hidden;
+}
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(12, 10, 9, 0.82);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease;
+}
+
+.video-modal.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.video-modal::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video-modal.is-flashing::before {
+  animation: videoFlash 560ms ease-out;
+}
+
+.video-shell {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 720px);
+  transform: scale(0.94);
+  transition: transform 240ms ease;
+}
+
+.video-modal.is-visible .video-shell {
+  transform: scale(1);
+}
+
+.video-shell video {
+  display: block;
+  width: 100%;
+  max-height: 82vh;
+  border-radius: 12px;
+  background: #050505;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.45);
+}
+
+.video-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #3f2a20;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@keyframes videoFlash {
+  0% {
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.95;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .admin-body {
@@ -803,4 +902,3 @@ body {
     display: none;
   }
 }
-

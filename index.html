@@ -24,7 +24,7 @@
         </div>
         <p class="hero-kicker">DEUS QUE FALA</p>
         <h1 class="hero-title">IGREJA BATISTA MEDABEREL</h1>
-        <p class="hero-locale">SETOR CABULA VI</p>
+        <p class="hero-locale">Um Ministério de Família</p>
 
         <div class="socials">
           <a
@@ -34,6 +34,16 @@
           >
             <img
               src="https://cdn.simpleicons.org/instagram/ffffff"
+              alt=""
+            />
+          </a>
+          <a
+            class="social youtube"
+            href="https://www.youtube.com/@medaberelcabulavi"
+            aria-label="YouTube"
+          >
+            <img
+              src="https://cdn.simpleicons.org/youtube/ffffff"
               alt=""
             />
           </a>
@@ -68,7 +78,7 @@
         <div class="cards">
           <a
             class="card image"
-            href="https://drive.google.com/drive/folders/1MQceFDMFytJI-ZJwoaCaEInDNCN3PiG1?usp=sharing"
+            href="https://drive.google.com/drive/folders/12YqkGTPuifzOPybg1NsjxpRt7zGSfjCY?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Abrir pasta no Google Drive"
@@ -77,10 +87,15 @@
             <div class="card-overlay"></div>
           </a>
 
-          <article class="card image">
+          <button
+            class="card image video-card"
+            type="button"
+            data-video-open
+            aria-label="Assistir video Culto de Provisao"
+          >
             <img class="card-media" src="assets/imagem1.jpg" alt="" />
             <div class="card-overlay"></div>
-          </article>
+          </button>
 
           <article class="card image">
             <img class="card-media" src="assets/imgaem2.jpeg" alt="" />
@@ -94,7 +109,7 @@
 
           <a
             class="card image"
-            href="escola-biblica-dominical.pdf"
+            href="https://drive.google.com/file/d/149Q7TFHnV_9t7nRz37VWtrqVWpjOD8Zj/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Abrir PDF Escola Biblica Dominical"
@@ -133,9 +148,6 @@
         <div class="section-heading">
           <h2 class="section-title">Aniversariantes do Mes</h2>
         </div>
-        <p class="birthdays-help">
-          Veja abaixo os aniversariantes cadastrados.
-        </p>
         <p id="birthdaysMessage" class="birthdays-message">
           Carregando aniversariantes...
         </p>
@@ -146,6 +158,24 @@
         <span>ibmcabulavi.com.br</span>
       </footer>
     </main>
+    <div
+      class="video-modal"
+      id="videoModal"
+      aria-hidden="true"
+      hidden
+      data-video-close
+    >
+      <div class="video-shell" role="dialog" aria-modal="true" aria-label="Video Culto de Provisao">
+        <button class="video-close" type="button" aria-label="Fechar video" data-video-close>
+          Fechar
+        </button>
+        <video id="cultoVideo" controls playsinline preload="metadata">
+          <source src="assets/culto-de-provisao.mp4" type="video/mp4" />
+          Seu navegador nao conseguiu reproduzir este video.
+        </video>
+      </div>
+    </div>
     <script type="module" src="js/birthdays-public.js"></script>
+    <script src="js/video-modal.js"></script>
   </body>
 </html>
