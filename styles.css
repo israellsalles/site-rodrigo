@@ -617,17 +617,7 @@ body.video-modal-open {
 }
 
 .video-close {
-  position: absolute;
-  top: -44px;
-  right: 0;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 8px;
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #3f2a20;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
+  display: none;
 }
 
 @keyframes videoFlash {
