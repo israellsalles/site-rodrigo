@@ -136,19 +136,30 @@
           </article>
 
           <article class="card image touch-feedback" data-touch-feedback>
-            <img class="card-media" src="assets/imgaem3.jpeg" alt="" />
-            <div class="card-overlay warm"></div>
+            <img
+              class="card-media"
+              src="assets/imgaem6.jpeg"
+              alt="Circulo de Oracao, toda quinta-feira as 14h"
+            />
           </article>
 
-          <button
+          <a
             class="card image video-card"
-            type="button"
-            data-video-open
+            href="assets/culto-da-familia.mp4?v=20260510"
             aria-label="Assistir video Culto da Familia"
+          >
+            <img class="card-media" src="assets/imgaem3.jpeg" alt="" />
+            <div class="card-overlay warm"></div>
+          </a>
+
+          <a
+            class="card image video-card"
+            href="assets/culto-de-provisao.mp4?v=20260510"
+            aria-label="Assistir video Culto de Provisao"
           >
             <img class="card-media" src="assets/imgaem2.jpeg" alt="" />
             <div class="card-overlay pink"></div>
-          </button>
+          </a>
 
           <a
             class="card image"
@@ -209,14 +220,14 @@
         <button class="video-close" type="button" aria-label="Fechar video" data-video-close>
           Fechar
         </button>
-        <video id="cultoVideo" controls playsinline preload="metadata">
-          <source src="assets/culto-de-provisao.mp4" type="video/mp4" />
+        <video id="cultoVideo" controls playsinline preload="auto">
+          <source src="assets/culto-de-provisao.mp4?v=20260510" type="video/mp4" />
           Seu navegador nao conseguiu reproduzir este video.
         </video>
       </div>
     </div>
     <script type="module" src="js/birthdays-public.js"></script>
-    <script src="js/video-modal.js"></script>
+    <script src="js/video-modal.js?v=20260510"></script>
     <script src="js/tap-feedback.js"></script>
   </body>
 </html>

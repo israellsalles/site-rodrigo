@@ -1,17 +1,28 @@
-const openButton = document.querySelector("[data-video-open]");
+const openButtons = document.querySelectorAll("[data-video-open]");
 const modal = document.querySelector("#videoModal");
 const video = document.querySelector("#cultoVideo");
+const videoSource = video?.querySelector("source");
 
 let closeTimer;
 let flashTimer;
 
-function openVideo() {
+function openVideo(event) {
   if (!modal || !video) {
     return;
   }
 
+  const button = event.currentTarget;
+  const videoSrc = button instanceof HTMLElement ? button.dataset.videoSrc : "";
+
   window.clearTimeout(closeTimer);
   window.clearTimeout(flashTimer);
+
+  video.pause();
+
+  if (videoSrc && videoSource && videoSource.getAttribute("src") !== videoSrc) {
+    videoSource.setAttribute("src", videoSrc);
+    video.load();
+  }
 
   modal.hidden = false;
   modal.setAttribute("aria-hidden", "false");
@@ -22,10 +33,14 @@ function openVideo() {
   });
 
   video.currentTime = 0;
+  video.play().catch(() => {
+    if (videoSrc) {
+      window.location.href = videoSrc;
+    }
+  });
 
   flashTimer = window.setTimeout(() => {
     modal.classList.remove("is-flashing");
-    video.play().catch(() => {});
   }, 260);
 }
 
@@ -48,7 +63,9 @@ function closeVideo() {
   }, 260);
 }
 
-openButton?.addEventListener("click", openVideo);
+openButtons.forEach((button) => {
+  button.addEventListener("click", openVideo);
+});
 
 modal?.addEventListener("click", (event) => {
   if (event.target instanceof HTMLElement && event.target.hasAttribute("data-video-close")) {
