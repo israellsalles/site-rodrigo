@@ -33,11 +33,7 @@ function openVideo(event) {
   });
 
   video.currentTime = 0;
-  video.play().catch(() => {
-    if (videoSrc) {
-      window.location.href = videoSrc;
-    }
-  });
+  video.play().catch(() => {});
 
   flashTimer = window.setTimeout(() => {
     modal.classList.remove("is-flashing");
