@@ -295,7 +295,7 @@ body {
 .birthday-date {
   font-family: "Cinzel", serif;
   font-size: clamp(18px, 4vw, 28px);
-  color: #7d512f;
+  color: #000;
   background: rgba(197, 138, 44, 0.18);
   border-radius: 10px;
   text-align: center;
