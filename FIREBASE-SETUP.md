@@ -113,6 +113,12 @@ service cloud.firestore {
       allow create, update, delete: if request.auth != null
         && request.auth.uid == "COLE_AQUI_O_UID_DO_ADMIN";
     }
+
+    match /configuracoes/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null
+        && request.auth.uid == "COLE_AQUI_O_UID_DO_ADMIN";
+    }
   }
 }
 ```
@@ -130,7 +136,7 @@ service cloud.firestore {
 2. Abra o arquivo `admin.html` no navegador
 3. Faca login com o email e senha criados no Passo 6
 4. Adicione um aniversariante e verifique se aparece no `index.html`
-5. Abra `admin-eventos.html`, cole o link publico de uma imagem de evento e verifique se aparece em `eventos.html`
+5. No mesmo `admin.html`, cole o link publico de uma imagem de evento e verifique se aparece em `eventos.html`
 
 ---
 

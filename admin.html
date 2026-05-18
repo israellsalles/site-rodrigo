@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Painel de Aniversariantes</title>
+    <title>Painel Administrativo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,8 +15,11 @@
   <body class="admin-body">
     <main class="admin-page">
       <header class="admin-header">
-        <a class="admin-back-link" href="index.html">Voltar para o site</a>
-        <h1 class="admin-title">Painel de Aniversariantes</h1>
+        <div class="admin-link-row">
+          <a class="admin-back-link" href="index.html">Voltar para o site</a>
+          <a class="admin-back-link" href="eventos.html">Ver agenda</a>
+        </div>
+        <h1 class="admin-title">Painel Administrativo</h1>
         <p class="admin-subtitle">
           Apenas a conta autorizada deve acessar esta tela.
         </p>
@@ -67,9 +70,9 @@
         <p id="loginStatus" class="admin-status" hidden></p>
       </section>
 
-      <section id="adminPanel" class="admin-card" hidden>
+      <section id="adminSessionPanel" class="admin-card" hidden>
         <div class="admin-panel-top">
-          <h2 class="section-title">Gerenciar Lista</h2>
+          <h2 class="section-title">Sessao</h2>
           <div class="admin-actions">
             <span id="adminUser" class="admin-user"></span>
             <button id="logoutBtn" class="admin-btn danger" type="button">
@@ -77,6 +80,34 @@
             </button>
           </div>
         </div>
+      </section>
+
+      <section id="cardLinksPanel" class="admin-card" hidden>
+        <h2 class="section-title">Links dos Cards</h2>
+        <form id="cardLinksForm" class="admin-grid admin-subform">
+          <div class="admin-field full">
+            <label class="admin-label" for="ebdLink">Link da Escola Biblica</label>
+            <input
+              class="admin-input"
+              id="ebdLink"
+              name="ebdLink"
+              type="url"
+              placeholder="https://..."
+              required
+            />
+          </div>
+
+          <div class="admin-actions full">
+            <button class="admin-btn primary" type="submit">
+              Salvar link
+            </button>
+          </div>
+        </form>
+        <p id="cardLinksStatus" class="admin-status" hidden></p>
+      </section>
+
+      <section id="birthdaysPanel" class="admin-card" hidden>
+        <h2 class="section-title">Gerenciar Aniversariantes</h2>
 
         <form id="birthdayForm" class="admin-grid">
           <input id="birthdayId" type="hidden" />
@@ -131,16 +162,16 @@
             <button class="admin-btn primary" type="submit">
               Salvar
             </button>
-            <button id="clearFormBtn" class="admin-btn secondary" type="button">
+            <button id="clearBirthdayFormBtn" class="admin-btn secondary" type="button">
               Limpar
             </button>
           </div>
         </form>
 
-        <p id="adminStatus" class="admin-status" hidden></p>
+        <p id="birthdayStatus" class="admin-status" hidden></p>
 
         <div class="admin-table-wrap">
-          <table class="admin-table">
+          <table class="admin-table birthdays-table">
             <thead>
               <tr>
                 <th>Nome</th>
@@ -149,6 +180,77 @@
               </tr>
             </thead>
             <tbody id="birthdayRows">
+              <tr>
+                <td class="empty" colspan="3">Carregando...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="eventsPanel" class="admin-card" hidden>
+        <h2 class="section-title">Gerenciar Agenda</h2>
+
+        <form id="eventForm" class="admin-grid">
+          <div class="admin-field full">
+            <label class="admin-label" for="eventTitle">Titulo</label>
+            <input
+              class="admin-input"
+              id="eventTitle"
+              name="eventTitle"
+              type="text"
+              maxlength="90"
+              placeholder="Ex.: Conferencia de Jovens"
+              required
+            />
+          </div>
+
+          <div class="admin-field full">
+            <label class="admin-label" for="eventImageUrl">Link da imagem</label>
+            <input
+              class="admin-input"
+              id="eventImageUrl"
+              name="eventImageUrl"
+              type="url"
+              placeholder="https://..."
+              required
+            />
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="eventOrder">Ordem</label>
+            <input
+              class="admin-input"
+              id="eventOrder"
+              name="eventOrder"
+              type="number"
+              min="0"
+              placeholder="0"
+            />
+          </div>
+
+          <div class="admin-actions full">
+            <button class="admin-btn primary" type="submit">
+              Adicionar
+            </button>
+            <button id="clearEventFormBtn" class="admin-btn secondary" type="button">
+              Limpar
+            </button>
+          </div>
+        </form>
+
+        <p id="eventStatus" class="admin-status" hidden></p>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table events-table">
+            <thead>
+              <tr>
+                <th>Evento</th>
+                <th>Ordem</th>
+                <th>Acoes</th>
+              </tr>
+            </thead>
+            <tbody id="eventRows">
               <tr>
                 <td class="empty" colspan="3">Carregando...</td>
               </tr>

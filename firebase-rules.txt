@@ -12,5 +12,11 @@ service cloud.firestore {
       allow create, update, delete: if request.auth != null
         && request.auth.uid == "COLE_AQUI_UID_DO_ADMIN";
     }
+
+    match /configuracoes/{docId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null
+        && request.auth.uid == "COLE_AQUI_UID_DO_ADMIN";
+    }
   }
 }

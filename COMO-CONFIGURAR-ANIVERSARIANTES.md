@@ -23,12 +23,12 @@
 4. Publique as regras.
 
 Para a agenda dinamica de eventos nao precisa ativar Storage. O painel salva apenas o titulo, o link da imagem e a ordem no Firestore.
+O painel tambem salva o link atual da Escola Biblica em `configuracoes/cards`, sem precisar alterar codigo.
 
 ## 5) Usar no site
 1. Pagina publica: `index.html` (todos veem a lista).
-2. Pagina de edicao: `admin.html` (somente admin autenticado consegue gravar).
+2. Painel unico de edicao: `admin.html` (somente admin autenticado consegue gravar).
 3. Agenda publica dinamica: `eventos.html`.
-4. Painel de eventos: `admin-eventos.html`.
 
 ## Estrutura dos dados (colecao `aniversariantes`)
 Cada registro salvo contem:
