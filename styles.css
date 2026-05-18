@@ -963,14 +963,6 @@ body.video-modal-open {
   color: #302018;
 }
 
-.event-admin-link {
-  display: inline-block;
-  margin-top: 4px;
-  color: #6c432a;
-  font-size: 12px;
-  font-weight: 700;
-}
-
 .setup-note {
   border-left: 4px solid #c58a2c;
 }

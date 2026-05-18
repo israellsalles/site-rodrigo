@@ -22,7 +22,7 @@
 3. Troque `COLE_AQUI_UID_DO_ADMIN` pelo UID do usuario admin.
 4. Publique as regras.
 
-Para a agenda dinamica de eventos nao precisa ativar Storage. O painel salva apenas o titulo, o link da imagem e o link opcional no Firestore.
+Para a agenda dinamica de eventos nao precisa ativar Storage. O painel salva apenas o titulo, o link da imagem e a ordem no Firestore.
 
 ## 5) Usar no site
 1. Pagina publica: `index.html` (todos veem a lista).
@@ -41,6 +41,5 @@ Cada registro salvo contem:
 Cada registro salvo contem:
 - `titulo` (string)
 - `imageUrl` (string, link publico da imagem)
-- `link` (string, opcional)
 - `ordem` (number)
 - `createdAtMs` (number)

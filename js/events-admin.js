@@ -18,7 +18,6 @@ const eventRows = document.getElementById("eventRows");
 
 const eventTitleInput = document.getElementById("eventTitle");
 const eventImageUrlInput = document.getElementById("eventImageUrl");
-const eventLinkInput = document.getElementById("eventLink");
 const eventOrderInput = document.getElementById("eventOrder");
 
 const records = new Map();
@@ -97,7 +96,6 @@ function normalizeRecord(entry) {
     id: entry.id,
     title: String(data.titulo || "").trim(),
     imageUrl: String(data.imageUrl || "").trim(),
-    link: normalizeUrl(data.link),
     order: Number.isFinite(order) ? order : 9999,
     createdAtMs: Number.isFinite(createdAtMs) ? createdAtMs : 0,
   };
@@ -121,9 +119,6 @@ function renderRows() {
     .map((record) => {
       const encodedId = encodeURIComponent(record.id);
       const orderLabel = record.order === 9999 ? "-" : String(record.order);
-      const linkHtml = record.link
-        ? `<a class="event-admin-link" href="${escapeHtml(record.link)}" target="_blank" rel="noopener noreferrer">Abrir link</a>`
-        : "";
 
       return `
         <tr>
@@ -132,7 +127,6 @@ function renderRows() {
               <img class="event-admin-thumb" src="${escapeHtml(record.imageUrl)}" alt="" loading="lazy" />
               <div>
                 <strong>${escapeHtml(record.title)}</strong>
-                ${linkHtml}
               </div>
             </div>
           </td>
@@ -211,7 +205,6 @@ async function handleSaveEvent(event) {
 
   const title = eventTitleInput.value.trim();
   const imageUrl = normalizeImageUrl(eventImageUrlInput.value);
-  const link = normalizeUrl(eventLinkInput.value);
   const orderValue = eventOrderInput.value.trim();
   const order = Number(orderValue);
 
@@ -225,16 +218,10 @@ async function handleSaveEvent(event) {
     return;
   }
 
-  if (eventLinkInput.value.trim() && !link) {
-    showStatus(adminStatus, "Informe um link valido com http:// ou https://.", "error");
-    return;
-  }
-
   const createdAtMs = Date.now();
   const payload = {
     titulo: title,
     imageUrl,
-    link,
     ordem: orderValue && Number.isFinite(order) ? order : 9999,
     createdAtMs,
   };
