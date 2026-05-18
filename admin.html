@@ -106,6 +106,77 @@
         <p id="cardLinksStatus" class="admin-status" hidden></p>
       </section>
 
+      <section id="eventsPanel" class="admin-card" hidden>
+        <h2 class="section-title">Gerenciar Agenda</h2>
+
+        <form id="eventForm" class="admin-grid">
+          <div class="admin-field full">
+            <label class="admin-label" for="eventTitle">Titulo</label>
+            <input
+              class="admin-input"
+              id="eventTitle"
+              name="eventTitle"
+              type="text"
+              maxlength="90"
+              placeholder="Ex.: Conferencia de Jovens"
+              required
+            />
+          </div>
+
+          <div class="admin-field full">
+            <label class="admin-label" for="eventImageUrl">Link da imagem</label>
+            <input
+              class="admin-input"
+              id="eventImageUrl"
+              name="eventImageUrl"
+              type="url"
+              placeholder="https://..."
+              required
+            />
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="eventOrder">Ordem</label>
+            <input
+              class="admin-input"
+              id="eventOrder"
+              name="eventOrder"
+              type="number"
+              min="0"
+              placeholder="0"
+            />
+          </div>
+
+          <div class="admin-actions full">
+            <button class="admin-btn primary" type="submit">
+              Adicionar
+            </button>
+            <button id="clearEventFormBtn" class="admin-btn secondary" type="button">
+              Limpar
+            </button>
+          </div>
+        </form>
+
+        <p id="eventStatus" class="admin-status" hidden></p>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table events-table">
+            <thead>
+              <tr>
+                <th>Evento</th>
+                <th>Ordem</th>
+                <th>Acoes</th>
+              </tr>
+            </thead>
+            <tbody id="eventRows">
+              <tr>
+                <td class="empty" colspan="3">Carregando...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <section id="birthdaysPanel" class="admin-card" hidden>
         <h2 class="section-title">Gerenciar Aniversariantes</h2>
 
@@ -180,77 +251,6 @@
               </tr>
             </thead>
             <tbody id="birthdayRows">
-              <tr>
-                <td class="empty" colspan="3">Carregando...</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="eventsPanel" class="admin-card" hidden>
-        <h2 class="section-title">Gerenciar Agenda</h2>
-
-        <form id="eventForm" class="admin-grid">
-          <div class="admin-field full">
-            <label class="admin-label" for="eventTitle">Titulo</label>
-            <input
-              class="admin-input"
-              id="eventTitle"
-              name="eventTitle"
-              type="text"
-              maxlength="90"
-              placeholder="Ex.: Conferencia de Jovens"
-              required
-            />
-          </div>
-
-          <div class="admin-field full">
-            <label class="admin-label" for="eventImageUrl">Link da imagem</label>
-            <input
-              class="admin-input"
-              id="eventImageUrl"
-              name="eventImageUrl"
-              type="url"
-              placeholder="https://..."
-              required
-            />
-          </div>
-
-          <div class="admin-field">
-            <label class="admin-label" for="eventOrder">Ordem</label>
-            <input
-              class="admin-input"
-              id="eventOrder"
-              name="eventOrder"
-              type="number"
-              min="0"
-              placeholder="0"
-            />
-          </div>
-
-          <div class="admin-actions full">
-            <button class="admin-btn primary" type="submit">
-              Adicionar
-            </button>
-            <button id="clearEventFormBtn" class="admin-btn secondary" type="button">
-              Limpar
-            </button>
-          </div>
-        </form>
-
-        <p id="eventStatus" class="admin-status" hidden></p>
-
-        <div class="admin-table-wrap">
-          <table class="admin-table events-table">
-            <thead>
-              <tr>
-                <th>Evento</th>
-                <th>Ordem</th>
-                <th>Acoes</th>
-              </tr>
-            </thead>
-            <tbody id="eventRows">
               <tr>
                 <td class="empty" colspan="3">Carregando...</td>
               </tr>
