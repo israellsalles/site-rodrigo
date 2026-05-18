@@ -59,22 +59,24 @@ body {
   font-size: 12px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--muted);
+  color: #4a2f22;
+  font-weight: 700;
 }
 
 .hero-title {
   font-family: "Cinzel", serif;
   font-size: 26px;
   letter-spacing: 2.5px;
-  color: var(--gold);
-  font-weight: 600;
+  color: #4a2f22;
+  font-weight: 700;
 }
 
 .hero-locale {
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--muted);
+  color: #4a2f22;
+  font-weight: 700;
 }
 
 .hero-sub {
@@ -129,7 +131,7 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: var(--gold);
+  color: #4a2f22;
   font-weight: 700;
   padding: 10px 16px;
   border-radius: 14px;
@@ -144,7 +146,8 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--muted);
+  color: #4a2f22;
+  font-weight: 700;
   margin-top: 6px;
 }
 
