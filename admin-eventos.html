@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel de Eventos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-body events-admin-page">
+    <main class="admin-page">
+      <header class="admin-header">
+        <div class="admin-link-row">
+          <a class="admin-back-link" href="index.html">Voltar para o site</a>
+          <a class="admin-back-link" href="eventos.html">Ver agenda</a>
+        </div>
+        <h1 class="admin-title">Painel de Eventos</h1>
+        <p class="admin-subtitle">
+          Cadastre e exclua os eventos usando links de imagens publicas.
+        </p>
+      </header>
+
+      <section id="firebaseSetupNote" class="admin-card setup-note" hidden>
+        <h2 class="section-title">Configuracao pendente</h2>
+        <p>
+          Edite o arquivo <code>js/firebase-config.js</code> com as credenciais
+          do seu projeto Firebase antes de usar este painel.
+        </p>
+      </section>
+
+      <section id="loginCard" class="admin-card">
+        <h2 class="section-title">Entrar com chave de edicao</h2>
+        <p class="admin-subtitle">
+          Use o email do admin e a chave (senha) cadastrada no Firebase Auth.
+        </p>
+        <form id="loginForm" class="admin-grid">
+          <div class="admin-field full">
+            <label class="admin-label" for="email">Email</label>
+            <input
+              class="admin-input"
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="username"
+              placeholder="admin@exemplo.com"
+              required
+            />
+          </div>
+          <div class="admin-field full">
+            <label class="admin-label" for="password">Chave (senha)</label>
+            <input
+              class="admin-input"
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Sua chave privada"
+              required
+            />
+          </div>
+          <div class="admin-actions full">
+            <button class="admin-btn primary" type="submit">Entrar</button>
+          </div>
+        </form>
+        <p id="loginStatus" class="admin-status" hidden></p>
+      </section>
+
+      <section id="adminPanel" class="admin-card" hidden>
+        <div class="admin-panel-top">
+          <h2 class="section-title">Gerenciar Agenda</h2>
+          <div class="admin-actions">
+            <span id="adminUser" class="admin-user"></span>
+            <button id="logoutBtn" class="admin-btn danger" type="button">
+              Sair
+            </button>
+          </div>
+        </div>
+
+        <form id="eventForm" class="admin-grid">
+          <div class="admin-field full">
+            <label class="admin-label" for="eventTitle">Titulo</label>
+            <input
+              class="admin-input"
+              id="eventTitle"
+              name="eventTitle"
+              type="text"
+              maxlength="90"
+              placeholder="Ex.: Conferencia de Jovens"
+              required
+            />
+          </div>
+
+          <div class="admin-field full">
+            <label class="admin-label" for="eventImageUrl">Link da imagem</label>
+            <input
+              class="admin-input"
+              id="eventImageUrl"
+              name="eventImageUrl"
+              type="url"
+              placeholder="https://..."
+              required
+            />
+          </div>
+
+          <div class="admin-field full">
+            <label class="admin-label" for="eventLink">Link opcional</label>
+            <input
+              class="admin-input"
+              id="eventLink"
+              name="eventLink"
+              type="url"
+              placeholder="https://..."
+            />
+          </div>
+
+          <div class="admin-field">
+            <label class="admin-label" for="eventOrder">Ordem</label>
+            <input
+              class="admin-input"
+              id="eventOrder"
+              name="eventOrder"
+              type="number"
+              min="0"
+              placeholder="0"
+            />
+          </div>
+
+          <div class="admin-actions full">
+            <button class="admin-btn primary" type="submit">
+              Adicionar
+            </button>
+            <button id="clearEventFormBtn" class="admin-btn secondary" type="button">
+              Limpar
+            </button>
+          </div>
+        </form>
+
+        <p id="adminStatus" class="admin-status" hidden></p>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Evento</th>
+                <th>Ordem</th>
+                <th>Acoes</th>
+              </tr>
+            </thead>
+            <tbody id="eventRows">
+              <tr>
+                <td class="empty" colspan="3">Carregando...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="js/events-admin.js"></script>
+  </body>
+</html>

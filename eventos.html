@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agenda de Eventos - Igreja Batista Medaberel</title>
+    <meta
+      name="description"
+      content="Agenda de Eventos da Igreja Batista Medaberel"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page events-page">
+      <header class="events-header">
+        <a class="admin-back-link" href="index.html">Voltar para o site</a>
+        <p class="hero-kicker">Agenda</p>
+        <h1 class="hero-title">Eventos</h1>
+        <p class="hero-locale">Fique por dentro dos proximos eventos</p>
+      </header>
+
+      <section class="section events-section">
+        <p id="eventsMessage" class="birthdays-message">
+          Carregando eventos...
+        </p>
+        <div id="eventsList" class="events-list" hidden></div>
+      </section>
+    </main>
+
+    <script type="module" src="js/events-public.js"></script>
+  </body>
+</html>

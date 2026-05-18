@@ -22,9 +22,13 @@
 3. Troque `COLE_AQUI_UID_DO_ADMIN` pelo UID do usuario admin.
 4. Publique as regras.
 
+Para a agenda dinamica de eventos nao precisa ativar Storage. O painel salva apenas o titulo, o link da imagem e o link opcional no Firestore.
+
 ## 5) Usar no site
 1. Pagina publica: `index.html` (todos veem a lista).
 2. Pagina de edicao: `admin.html` (somente admin autenticado consegue gravar).
+3. Agenda publica dinamica: `eventos.html`.
+4. Painel de eventos: `admin-eventos.html`.
 
 ## Estrutura dos dados (colecao `aniversariantes`)
 Cada registro salvo contem:
@@ -32,3 +36,11 @@ Cada registro salvo contem:
 - `dia` (number)
 - `mes` (number)
 - `observacao` (string, opcional)
+
+## Estrutura dos dados (colecao `eventos`)
+Cada registro salvo contem:
+- `titulo` (string)
+- `imageUrl` (string, link publico da imagem)
+- `link` (string, opcional)
+- `ordem` (number)
+- `createdAtMs` (number)
