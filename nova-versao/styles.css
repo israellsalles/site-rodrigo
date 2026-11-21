@@ -268,46 +268,21 @@ body.menu-open .site-menu {
   overflow: hidden;
   isolation: isolate;
   color: #fff8e9;
-  background:
-    radial-gradient(circle at 78% 43%, rgba(255, 190, 58, 0.92) 0, rgba(216, 113, 13, 0.54) 9%, transparent 28%),
-    linear-gradient(105deg, #1c0d05 0%, #4b210b 43%, #954814 72%, #311306 100%);
+  background: url("../novas-imgs/aa9e7777-f295-4fcf-b1e1-ace386b8b285.png") center / cover no-repeat;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -3;
-  opacity: 0.5;
-  background:
-    linear-gradient(90deg, rgba(18, 7, 2, 0.8), transparent 55%),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.015) 0 1px, transparent 1px 4px);
+  z-index: 0;
+  background: linear-gradient(90deg, rgba(18, 7, 2, 0.86) 0%, rgba(18, 7, 2, 0.58) 43%, rgba(18, 7, 2, 0.12) 76%);
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  right: -5%;
-  bottom: 0;
-  left: 32%;
-  z-index: -2;
-  height: 38%;
-  opacity: 0.74;
-  background: linear-gradient(180deg, rgba(33, 15, 5, 0.4), #160903 80%);
-  clip-path: polygon(0 58%, 9% 44%, 18% 52%, 30% 28%, 43% 45%, 56% 19%, 68% 40%, 78% 24%, 89% 38%, 100% 18%, 100% 100%, 0 100%);
-}
-
-.hero-rays {
-  position: absolute;
-  top: -80%;
-  right: 4%;
-  z-index: -2;
-  width: 90%;
-  aspect-ratio: 1;
-  opacity: 0.3;
-  background: repeating-conic-gradient(from 196deg, rgba(255, 215, 128, 0.5) 0deg 4deg, transparent 4deg 12deg);
-  -webkit-mask-image: radial-gradient(circle, #000 0, rgba(0, 0, 0, 0.65) 35%, transparent 68%);
-  mask-image: radial-gradient(circle, #000 0, rgba(0, 0, 0, 0.65) 35%, transparent 68%);
+.hero::after,
+.hero-rays,
+.hero-book {
+  display: none;
 }
 
 .hero-copy {
@@ -384,16 +359,6 @@ body.menu-open .site-menu {
   font-size: 0.78em;
   font-style: normal;
   font-weight: 600;
-}
-
-.hero-book {
-  position: absolute;
-  right: -3%;
-  bottom: -7%;
-  z-index: 1;
-  width: min(66%, 720px);
-  height: auto;
-  transform: rotate(-2deg);
 }
 
 .contact-strip {
@@ -552,6 +517,40 @@ body.menu-open .site-menu {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.75;
+}
+
+.quick-icon {
+  width: 43px;
+  height: 43px;
+  display: block;
+  flex: 0 0 auto;
+  background: #a26208;
+  -webkit-mask: var(--quick-icon) center / contain no-repeat;
+  mask: var(--quick-icon) center / contain no-repeat;
+}
+
+.quick-icon.icon-calendar {
+  --quick-icon: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/calendar-days.svg");
+}
+
+.quick-icon.icon-prayer {
+  --quick-icon: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/hand-holding-heart.svg");
+}
+
+.quick-icon.icon-cake {
+  --quick-icon: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/cake-candles.svg");
+}
+
+.quick-icon.icon-book {
+  --quick-icon: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/book-open.svg");
+}
+
+.quick-icon.icon-users {
+  --quick-icon: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/people-group.svg");
+}
+
+.quick-icon.icon-broadcast {
+  --quick-icon: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/tower-broadcast.svg");
 }
 
 .quick-link span {
@@ -1070,6 +1069,7 @@ body.menu-open .site-menu {
     min-height: 390px;
     padding: 43px 22px 30px;
     grid-template-columns: minmax(0, 1.4fr) minmax(90px, 0.6fr);
+    background-position: 62% center;
   }
 
   .hero h1 {
@@ -1143,7 +1143,8 @@ body.menu-open .site-menu {
     padding: 15px 6px;
   }
 
-  .quick-link svg {
+  .quick-link svg,
+  .quick-icon {
     width: 37px;
     height: 37px;
   }
@@ -1307,6 +1308,7 @@ body.menu-open .site-menu {
     min-height: 372px;
     padding: 38px 17px 26px;
     grid-template-columns: minmax(0, 1.55fr) minmax(72px, 0.45fr);
+    background-position: 64% center;
   }
 
   .hero h1 {
@@ -1364,7 +1366,8 @@ body.menu-open .site-menu {
     min-height: 105px;
   }
 
-  .quick-link svg {
+  .quick-link svg,
+  .quick-icon {
     width: 33px;
     height: 33px;
   }
