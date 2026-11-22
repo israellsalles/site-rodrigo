@@ -18,7 +18,7 @@
 
 ## 4) Restringir edicao para um unico usuario
 1. No Firebase Console, abra `Firestore Database > Rules`.
-2. Copie o conteudo de `firebase-rules.txt`.
+2. Copie o conteudo de `firebase/firestore.rules`.
 3. Troque `COLE_AQUI_UID_DO_ADMIN` pelo UID do usuario admin.
 4. Publique as regras.
 

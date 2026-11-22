@@ -268,7 +268,7 @@ body.menu-open .site-menu {
   overflow: hidden;
   isolation: isolate;
   color: #fff8e9;
-  background: url("../novas-imgs/aa9e7777-f295-4fcf-b1e1-ace386b8b285.png") center / cover no-repeat;
+  background: url("../assets/images/hero/biblia-por-do-sol.jpg") center / cover no-repeat;
 }
 
 .hero::before {
@@ -553,6 +553,10 @@ body.menu-open .site-menu {
   --quick-icon: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/tower-broadcast.svg");
 }
 
+.quick-icon.icon-location {
+  --quick-icon: url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/location-dot.svg");
+}
+
 .quick-link span {
   font-size: 15px;
   font-weight: 800;
@@ -828,6 +832,19 @@ body.menu-open .site-menu {
   background:
     radial-gradient(circle at 74% 4%, rgba(186, 102, 22, 0.17), transparent 24rem),
     linear-gradient(115deg, #301205, #4b200b 48%, #251005);
+}
+
+.footer-actions {
+  margin-top: 0;
+  padding: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: #fff6e7;
+  background: transparent;
+  border-top: 1px solid rgba(255, 239, 210, 0.18);
+  border-bottom: 1px solid rgba(255, 239, 210, 0.18);
 }
 
 .footer-grid {
@@ -1218,6 +1235,12 @@ body.menu-open .site-menu {
 
   .site-footer {
     padding: 29px 22px 15px;
+  }
+
+  .footer-actions {
+    margin-top: 0;
+    padding: 16px 0;
+    gap: 15px;
   }
 
   .footer-grid {

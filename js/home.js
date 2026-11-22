@@ -2,7 +2,7 @@ const eventsList = document.getElementById("eventsList");
 const eventsStatus = document.getElementById("eventsStatus");
 const birthdaysMessage = document.getElementById("birthdaysMessage");
 const birthdaysList = document.getElementById("birthdaysList");
-const fallbackEventImageUrl = new URL("../assets/agenda_de_eventos.jpeg", import.meta.url).href;
+const fallbackEventImageUrl = new URL("../assets/images/fallback/agenda-eventos.jpg", import.meta.url).href;
 const firebaseConfigUrl = new URL("../js/firebase-config.js", import.meta.url).href;
 
 document.getElementById("currentYear").textContent = new Date().getFullYear();
