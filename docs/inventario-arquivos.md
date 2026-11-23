@@ -22,7 +22,7 @@ Este inventario registra a estrutura organizada em novembro de 2026.
 
 ### Imagens
 
-- `assets/images/branding/logo-medaberel.svg`
+- `assets/images/branding/logo-medaberel.jpg`
 - `assets/images/fallback/agenda-eventos.jpg`
 - `assets/images/hero/biblia-por-do-sol.jpg`
 - `assets/images/cultos/culto-familia.jpg`
