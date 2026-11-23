@@ -4,7 +4,7 @@
   <circle cx="320" cy="320" r="316" fill="#050505"/>
   <circle cx="320" cy="320" r="305" fill="none" stroke="#c28a32" stroke-width="3" opacity=".55"/>
 
-  <g fill="none" stroke="#d7a647" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="translate(-64 -3) scale(1.2)" fill="none" stroke="#d7a647" stroke-linecap="round" stroke-linejoin="round">
     <path d="M320 82c-4 33-35 47-35 88 0 31 18 51 35 66 17-15 35-35 35-66 0-41-31-55-35-88Z" stroke-width="8"/>
     <path d="M320 122c-1 17-15 28-15 48 0 14 7 25 15 34 8-9 15-20 15-34 0-20-14-31-15-48Z" fill="#d7a647" stroke-width="3"/>
     <path d="M223 285 320 223l97 62" stroke-width="10"/>
@@ -16,8 +16,4 @@
     <path d="M205 405c35-10 68-5 98 12m132-12c-35-10-68-5-98 12" stroke-width="4" opacity=".75"/>
   </g>
 
-  <text x="320" y="505" fill="#f1cf83" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" letter-spacing="4" text-anchor="middle">IGREJA BATISTA</text>
-  <text x="320" y="552" fill="#d7a647" font-family="Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="2" text-anchor="middle">MEDABEREL</text>
-  <path d="M218 574h204" stroke="#9d6d27" stroke-width="2"/>
-  <text x="320" y="604" fill="#f4d996" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="6" text-anchor="middle">SETOR CABULA VI</text>
 </svg>
