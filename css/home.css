@@ -698,8 +698,13 @@ body.menu-open .site-menu {
   display: block;
   overflow: hidden;
   color: #fff;
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  text-align: left;
   text-decoration: none;
   background: #3a1708;
+  border: 0;
   border-radius: 13px;
   box-shadow: 0 12px 23px rgba(43, 20, 8, 0.19);
 }
@@ -744,7 +749,8 @@ body.menu-open .site-menu {
   text-transform: uppercase;
 }
 
-.event-copy p {
+.event-copy p,
+.event-copy > span {
   margin: 0;
   font-size: 12px;
   line-height: 1.3;

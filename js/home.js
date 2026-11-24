@@ -36,15 +36,8 @@ eventsList.addEventListener("click", (event) => {
   if (card) openVideo(card);
 });
 
-eventsList.addEventListener("keydown", (event) => {
-  const card = event.target.closest(".event-card[data-video]");
-  if (card && (event.key === "Enter" || event.key === " ")) {
-    event.preventDefault();
-    openVideo(card);
-  }
-});
-
 videoClose.addEventListener("click", closeVideo);
+cultoVideo.addEventListener("ended", closeVideo);
 videoModal.addEventListener("click", (event) => {
   if (event.target === videoModal) closeVideo();
 });
