@@ -2,10 +2,55 @@ const eventsList = document.getElementById("eventsList");
 const eventsStatus = document.getElementById("eventsStatus");
 const birthdaysMessage = document.getElementById("birthdaysMessage");
 const birthdaysList = document.getElementById("birthdaysList");
+const videoModal = document.getElementById("videoModal");
+const videoModalTitle = document.getElementById("videoModalTitle");
+const cultoVideo = document.getElementById("cultoVideo");
+const videoClose = document.getElementById("videoClose");
 const fallbackEventImageUrl = new URL("../assets/images/fallback/agenda-eventos.jpg", import.meta.url).href;
 const firebaseConfigUrl = new URL("../js/firebase-config.js", import.meta.url).href;
+let lastVideoTrigger = null;
 
 document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+function openVideo(card) {
+  lastVideoTrigger = card;
+  cultoVideo.src = card.dataset.video;
+  videoModalTitle.textContent = card.dataset.videoTitle || "Culto";
+  videoModal.hidden = false;
+  document.body.classList.add("video-modal-open");
+  videoClose.focus();
+  cultoVideo.play().catch(() => {});
+}
+
+function closeVideo() {
+  cultoVideo.pause();
+  cultoVideo.removeAttribute("src");
+  cultoVideo.load();
+  videoModal.hidden = true;
+  document.body.classList.remove("video-modal-open");
+  lastVideoTrigger?.focus();
+}
+
+eventsList.addEventListener("click", (event) => {
+  const card = event.target.closest(".event-card[data-video]");
+  if (card) openVideo(card);
+});
+
+eventsList.addEventListener("keydown", (event) => {
+  const card = event.target.closest(".event-card[data-video]");
+  if (card && (event.key === "Enter" || event.key === " ")) {
+    event.preventDefault();
+    openVideo(card);
+  }
+});
+
+videoClose.addEventListener("click", closeVideo);
+videoModal.addEventListener("click", (event) => {
+  if (event.target === videoModal) closeVideo();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !videoModal.hidden) closeVideo();
+});
 
 function normalizeHttpsUrl(value) {
   try {

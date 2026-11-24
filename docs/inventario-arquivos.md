@@ -29,6 +29,12 @@ Este inventario registra a estrutura organizada em novembro de 2026.
 - `assets/images/cultos/culto-provisao.jpg`
 - `assets/images/cultos/culto-libertacao.jpg`
 
+### Vídeos dos cultos
+
+- `assets/videos/culto-familia.mp4`
+- `assets/videos/culto-provisao.mp4`
+- `assets/videos/culto-libertacao.mp4`
+
 ## Arquivos legados
 
 Os arquivos abaixo nao possuem referencia interna atual. Foram agrupados em `assets/legacy/` para facilitar manutencao e futuras decisoes de remocao.
@@ -48,12 +54,6 @@ Os arquivos abaixo nao possuem referencia interna atual. Foram agrupados em `ass
 - `assets/legacy/images/plano-leitura-antigo.jpg`
 - `assets/legacy/images/circulo-oracao-antigo.jpg`
 - `assets/legacy/qrcode/qrcode-site.png`
-
-### Videos
-
-- `assets/legacy/videos/culto-familia.mp4`
-- `assets/legacy/videos/culto-provisao.mp4`
-- `assets/legacy/videos/culto-libertacao.mp4`
 
 ## Removidos anteriormente
 
