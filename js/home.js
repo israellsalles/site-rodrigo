@@ -45,13 +45,10 @@ function createEventCard(record) {
   const label = document.createElement("small");
   label.textContent = "Agenda da igreja";
 
-  const title = document.createElement("h3");
-  title.textContent = record.title;
-
   const invitation = document.createElement("p");
   invitation.textContent = "Confira os detalhes da programação.";
 
-  copy.append(label, title, invitation);
+  copy.append(label, invitation);
   card.append(image, copy);
   return card;
 }
